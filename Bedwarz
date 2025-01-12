@@ -1,0 +1,17 @@
+for i,v in pairs(game:GetService("Workspace").Beds:GetDescendants()) do
+    if v.Name == "BedHitbox" then
+        wait(1)
+        game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = v.CFrame * CFrame.new(0, 1, 0)
+    end
+end
+task.wait(0.3)
+repeat wait()
+for i,v in pairs(game:GetService("Players"):GetChildren()) do
+    if v.Name ~= game.Players.LocalPlayer.Name and v.Character and v.Team ~= game.Players.LocalPlayer.Team then
+        for i=1,5 do
+            wait(0.9)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character:FindFirstChild("HumanoidRootPart").CFrame * CFrame.new(-3,2,-3)
+        end
+    end
+end
+until nil
